@@ -1,0 +1,34 @@
+<view class="component-moet-cropper" style="width:{{cropperWidth}}px;height:{{cropperHeight}}">
+  <view class="imageView" style="height:{{imgViewHeight}}px" a:if="{{hideLoading}}">
+    <view class="imageArea">
+      <image src="{{image}}" style="width:{{imgWidth}}px;height:{{imgHeight}}px;top:{{imgTop}}px;left:{{imgLeft}}px" disable-scroll="true" mode="widthFix"></image>
+      <view class="imageCover" style="width:{{imgWidth}}px;left:{{imgLeft}}px;">
+        <view class="cutDup" style="width:{{cutW}}px;height:{{cutH}}px;left:{{cutL - imgLeft}}px;top:{{cutT}}px"></view>
+      </view>
+    </view>
+    <view class="cropper-wraper">
+      <view class="corpper-view-box" onTouchStart="croperStart" onTouchMove="croperMove" style="width:{{cutW}}px;height:{{cutH}}px;left:{{cutL}}px;top:{{cutT}}px">
+        <view class="cropper-dashed-h"></view>
+        <view class="cropper-dashed-v"></view>
+        <view class="cropper-line-t" data-drag="top"></view>
+        <view class="cropper-line-r" data-drag="right"></view>
+        <view class="cropper-line-b" data-drag="bottom"></view>
+        <view class="cropper-line-l" data-drag="left"></view>
+        <view class="cropper-point point-tr" data-drag="topRight" catchTouchStart="dragPointStart" catchTouchMove="dragPointMove"></view>
+        <view class="cropper-point point-rb" data-drag="rightBottom" catchTouchStart="dragPointStart" catchTouchMove="dragPointMove"></view>
+        <view class="cropper-point point-bl" data-drag="bottomLeft" catchTouchStart="dragPointStart" catchTouchMove="dragPointMove"></view>
+        <view class="cropper-point point-lt" data-drag="leftTop" catchTouchStart="dragPointStart" catchTouchMove="dragPointMove"></view>
+      </view>
+    </view>
+  </view>
+  <view hidden="{{hideLoading}}" class="loading">
+    <view clas="container">
+      <!-- <image mode="widthFix" src="/pages/index/asset/image/circle.png"/> -->
+      <image mode="widthFix" src="./assets/left.png"/>
+      <!-- <image mode="widthFix" src="../../assets/1-4.png"/> -->
+      <view>
+      加载中
+      </view>
+    </view>
+  </view>
+</view>

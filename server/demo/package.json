@@ -1,0 +1,22 @@
+{
+    "name": "demo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "",
+    "license": "ISC",
+    "sdkVersion": "1.2.0",
+    "dependencies": {
+    },
+    "config": {
+        "notNeedLogin": [
+            "getToken",
+            "getDetail",
+            "getImage",
+            "getDesign",
+            "saveDesign",
+            "getSensitiveWords",
+            "designPreview"
+        ]
+    }
+}

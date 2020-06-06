@@ -1,0 +1,92 @@
+{
+  "name": "my-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "A webpak version Boilerplate",
+  "author": "Ruhig Nieh",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev:alipay",
+    "dev:alipay": "cross-env PT=Alipay NODE_ENV=development webpack --config build/webpack.config.js --watch --env.target=Alipay",
+    "dev:wechat": "cross-env PT=Wechat NODE_ENV=development webpack --config build/webpack.config.js --watch --env.target=Wechat",
+    "build:alipay": "cross-env PT=Alipay OPERATING_ENV=production webpack --config build/webpack.config.js --env.target=Alipay --env.min",
+    "build:wechat": "cross-env PT=Wechat OPERATING_ENV=production webpack --config build/webpack.config.js --env.target=Wechat --env.min",
+    "build": "run-s build:*",
+    "create-page": "node ./script/index.js --type page --dir src --indent 2 --style scss",
+    "create-component": "node ./script/index.js --type component --dir src --indent 2 --style scss",
+    "clear": "npx rimraf dist",
+    "lint": "eslint --ext .js src --ext .js server",
+    "lint-fix": "eslint --fix --ext .js src --ext .js server",
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "server/**/*js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/runtime": "^7.10.2",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "chalk": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.1",
+    "cross-env": "^7.0.2",
+    "css-loader": "^3.5.3",
+    "eslint": "^7.1.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "file-loader": "^6.0.0",
+    "fs-extra": "^9.0.1",
+    "generate-asset-webpack-plugin": "^0.3.0",
+    "husky": "^4.2.5",
+    "inquirer": "^7.1.0",
+    "lint-staged": "^10.2.9",
+    "lodash": "^4.17.15",
+    "mini-css-extract-plugin": "^0.9.0",
+    "mkdirp": "^1.0.4",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "opn": "^6.0.0",
+    "prettier": "^2.0.5",
+    "replace-ext": "^2.0.0",
+    "sass-loader": "^8.0.2",
+    "standard-version": "^8.0.0",
+    "stylelint": "^13.5.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.17.2",
+    "stylelint-webpack-plugin": "^2.0.0",
+    "update-notifier": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "wxapp-webpack4-plugin": "^0.19.1",
+    "xdg-basedir": "^4.0.0",
+    "yargs": "^15.3.1"
+  },
+  "copyWebpack": [
+    "assets"
+  ],
+  "dependencies": {
+    "@tbmp/mp-cloud-sdk": "^1.3.6"
+  }
+}

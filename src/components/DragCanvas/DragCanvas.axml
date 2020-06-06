@@ -1,0 +1,5 @@
+<view class="DragCanvas-component">
+		DragCanvas-component
+		<!-- content -->
+</view>
+<canvas id='componentDragCanvas' disable-scroll="true" onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" style='width: {{width}}rpx; height: {{height}}rpx;'></canvas>

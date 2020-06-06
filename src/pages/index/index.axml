@@ -1,0 +1,3 @@
+<view class="main">
+  <button type="primary" onTap="navigateToMK">跳转新页面</button>
+</view>

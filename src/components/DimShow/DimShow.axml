@@ -1,0 +1,7 @@
+<view class="DimShow-component" style='width:{{xWidth}};height:{{xHeight}};'>
+		<!-- DimShow-component -->
+		<canvas class="dimCamvas" id="componentDimCanvas" disable-scroll="true" onTouchStart="onTouchStart" onTouchEnd="onTouchEnd" onTouchMove="onTouchMove"></canvas>
+		<view a:if="{{bgimg}}" class="bgimg" style="background-image:url('{{bgimg}}');"></view>
+		<!-- content -->
+</view>
+<slot></slot>

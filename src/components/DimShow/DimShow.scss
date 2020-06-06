@@ -1,0 +1,57 @@
+.DimShow-component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-content: center;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: 0.36s all ease;
+  z-index: 0;
+  .bgimg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(26rpx);
+    background-size: 260%;
+    background-origin: content-box;
+    background-position: center;
+    overflow: hidden;
+    transition: 0.36s all ease;
+    z-index: -2;
+  }
+  .dimCamvas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: -1;
+    transition: 0.36s all ease;
+  }
+  .diretion {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .diretion view {
+    margin: 0 auto;
+    float: none;
+    text-align: center;
+  }
+  .diretion button {
+    width: 33.3%;
+    float: left;
+  }
+}
+

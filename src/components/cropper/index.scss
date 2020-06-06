@@ -1,0 +1,207 @@
+.component-moet-cropper {
+  position: relative;
+  height: 460rpx;
+  width: 690rpx;
+  .loading {
+    position: absolute;
+    top: -18rpx;
+    bottom: -18rpx;
+    left: -19rpx;
+    right: -18rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: #fff;
+    .container {
+      text-align: center;
+    }
+    image {
+      width: 50%;
+      margin-bottom: 18rpx;
+      animation: circle 5s linear infinite;
+    }
+  }
+  .top {
+    width: 100%;
+    overflow: hidden;
+    height: 60rpx;
+  }
+  .imageView {
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+    /* border: 1px solid #cc9999; */
+  }
+  .imageArea {
+    position: relative;
+    height: 100%;
+  }
+  .imageArea {
+    image {
+      height: inherit !important;
+    }
+    .imageCover {
+      position: absolute;
+      bottom: 0px;
+      top: 0px;
+      overflow: hidden;
+    }
+    .imageCover .cutDup {
+      position: absolute;
+      box-shadow: 0 0 0 9999px rgba(255, 255, 255, 0.41);
+      border: 2px solid rgba(255, 186, 186, 1);
+    }
+  }
+  .noImageBox {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 1000rpx;
+  }
+  .imageView image {
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+  }
+  .corpper-view-box {
+    position: absolute;
+    z-index: 2;
+    border: 2px solid rgba(255, 186, 186, 1);
+  }
+  /* 横向虚线 */
+  .cropper-dashed-h {
+    position: absolute;
+    top: 33.33333333%;
+    left: 0;
+    width: 100%;
+    height: 33.33333333%;
+    border-top: 1px dashed rgba(255, 255, 255, 0.5);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+  }
+  /* 纵向虚线 */
+  .cropper-dashed-v {
+    position: absolute;
+    left: 33.33333333%;
+    top: 0;
+    width: 33.33333333%;
+    height: 100%;
+    border-left: 1px dashed rgba(255, 255, 255, 0.5);
+    border-right: 1px dashed rgba(255, 255, 255, 0.5);
+  }
+  /* 四个方向的线  为了之后的拖动事件*/
+  .cropper-line-t {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 1px;
+    opacity: 0.1;
+  }
+  .cropper-line-r {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0px;
+    width: 1px;
+    opacity: 0.1;
+    height: 100%;
+  }
+  .cropper-line-b {
+    position: absolute;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    opacity: 0.1;
+  }
+  .cropper-line-l {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 1px;
+    opacity: 0.1;
+    height: 100%;
+  }
+  /* 剪裁框的点 */
+  .cropper-point {
+    width: 5px;
+    height: 5px;
+    opacity: 0.75;
+    position: absolute;
+    z-index: 3;
+  }
+  .point-tr {
+    top: -3px;
+    left: 100%;
+    margin-left: -3px;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    background-image: url(/components/cropper/assets/left.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .point-rb {
+    left: 100%;
+    top: 100%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    opacity: 1;
+    background-image: url(/components/moet-cropper/assets/right.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .point-bl {
+    left: 0%;
+    top: 100%;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    background-image: url(/components/cropper/assets/left.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .point-lt {
+    left: 0%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    opacity: 1;
+    background-image: url(/components/cropper/assets/right.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .cropper-wraper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: transparent;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

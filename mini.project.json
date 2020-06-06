@@ -1,0 +1,10 @@
+{
+  "enableParallelLoader": true,
+  "enableDistFileMinify": true,
+  "axmlStrictCheck": true,
+  "component2": true,
+  "cloud": {
+    "type": "CLOUDAPP"
+  },
+  "miniprogramRoot": "dist/alipay"
+}
