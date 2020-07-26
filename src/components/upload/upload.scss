@@ -1,0 +1,191 @@
+.uploadContainer {
+    height: 253.4rpx;
+    position: absolute;
+    bottom: 132.22rpx;
+    width: 95%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 99;
+    /* background: rgba(246, 222, 222, 1); */
+}
+
+.uploadContainer .newFilesContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.uploadContainer .addNewIcon {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-image: url(../../assets/image/upload.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center center
+}
+
+.uploadContainer .addNewTitle {
+    margin-top: 21.72rpx;
+    font-size: 16px;
+}
+
+.uploadContainer .filesContent {
+    position: relative;
+    border-radius: 15px;
+    padding: 19.9rpx 0;
+    background: rgba(246, 222, 222, 1);
+}
+
+.uploadContainer .closedBorder {
+    position: absolute;
+    z-index: 9;
+    top: 8px;
+    right: 5px;
+    padding: 5px;
+}
+
+.uploadContainer .closedBorder .closed {
+    width: 20rpx;
+    height: 20rpx;
+    background-image: url(../../assets/image/closed.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.uploadContainer .title {
+    padding: 0 5px;
+    font-size: 30.77rpx;
+}
+
+.uploadContainer .tips {
+    padding: 0 5px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 1);
+    opacity: 0.5;
+}
+
+.uploadContainer .imageContent {
+    padding: 5px 3px;
+    display: flex;
+}
+
+.uploadContainer .squar {
+    width: 20%;
+    padding-top: 20%;
+    position: relative;
+}
+
+.uploadContainer .squar .del {
+    position: absolute;
+    z-index: 99;
+    top: -5px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.uploadContainer .squar .del .closed {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/image/b_close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.uploadContainer .squar .photo, .squar .add {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px dotted #000;
+}
+
+.uploadContainer .squar .imageMask {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+}
+
+.uploadContainer .squar .imageMask.activeImage {
+    background-color: rgba(255, 163, 163, 0.66);
+    background-image: url(../../assets/image/bingo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.uploadContainer .squar .imageLoading {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+}
+
+.uploadContainer .squar .imageLoading .imageLoadingCover {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+.uploadContainer .squar .imageLoading image {
+    width: 50%;
+    animation: circle 5s linear infinite;
+}
+
+.uploadContainer .squar .imageLoading .imageLoadingCover image {
+    width: 30%;
+    margin-bottom: 5px;
+}
+
+.uploadContainer .photo .image {
+    width: 100%;
+    height: 100%;
+    /* 此处下面仅用于background的css设置 */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.uploadContainer .add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.uploadContainer .addIcon {
+    transform: scale(2);
+}
+
+.uploadContainer .addTitle {
+    padding-top: 10rpx;
+    font-size: 12px;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

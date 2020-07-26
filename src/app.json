@@ -1,10 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/mk/mk"
+    "pages/index/index"
   ],
   "window": {
-    "defaultTitle": "Ali Scaffold",
+    "defaultTitle": "Wine Bottle",
     "navigationBarTextStyle": "black",
     "titleBarColor": "#ffffff",
     "navigationBarForceEnable": true,

@@ -1,0 +1,52 @@
+:root {
+    --dash-border: 1px dashed rgba(112, 112, 112, 1);
+}
+
+.component-cropper-popper {
+    position: fixed;
+    bottom: 18.1rpx;
+    width: 682.37rpx;
+    height: 778.3rpx;
+    left: 50%;
+    transform: translate(-50%);
+    border: 5px solid rgba(246, 222, 222, 1);
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.component-cropper-popper .dash-border {
+    border-bottom: var(--dash-border);
+}
+
+.component-cropper-popper .container {
+    position: relative;
+    width: 624.45rpx;
+    padding: 28rpx 25.34rpx 39.82rpx;
+    box-sizing: content-box;
+}
+
+.component-cropper-popper .head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 36.2rpx;
+    border-bottom: var(--dash-border);
+}
+
+.component-cropper-popper .head .right image {
+    width: 100%;
+}
+
+.component-cropper-popper .cropper-area {
+    margin-top: 52.49rpx;
+}
+
+.component-cropper-popper .button-area {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 52.49rpx;
+    padding-top: 52.49rpx;
+    border-top: var(--dash-border);
+}

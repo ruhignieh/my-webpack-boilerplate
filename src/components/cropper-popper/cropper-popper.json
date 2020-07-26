@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "moet-cropper": "../moet-cropper/moet-cropper",
+    "moet-button": "../button-unit/button-unit"
+  }
+}

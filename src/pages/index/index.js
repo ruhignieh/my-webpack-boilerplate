@@ -4,17 +4,27 @@
  * @module:
  * @version: 1.0.0
  * @Author: Ruhig Nieh
- * @Date: 2020-06-01 16:12:52
+ * @Date: 2020-07-13 10:39:14
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-06-05 15:37:00
+ * @LastEditTime: 2020-07-24 14:18:42
  */
-// import './index.scss';
-
-// eslint-disable-next-line new-cap
+import './index.scss';
+// import image from '../../assets/image/logo.png';
+// console.log(image);
+// console.log(require);
 Page({
-  data: {},
-  onLoad() {},
-  navigateToMK() {
-    my.navigateTo({ url: '../mk/mk' });
-  },
+    events: {
+        onKeyboardHeight() {},
+    },
+    data() {
+        return {
+            // image,
+            title: 'Demo',
+        };
+    },
+    onLoad() {
+        console.log('__ALIPAY__:', __ALIPAY__);
+    },
+
+    onHide() {},
 });

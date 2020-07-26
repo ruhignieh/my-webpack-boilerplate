@@ -1,9 +1,10 @@
-const zlib = require('zlib');
-const designTemplate = require('./design');
+const SW = require("./senseWords");
+const designTemplate = require("./design");
+const zlib = require("zlib");
 
 exports.main = async () => {
   // console.log(process.env.MTdomain);
-  return 'hello world';
+  return "hello world";
 };
 
 const formDocument = (compressedJSON) => {
@@ -18,10 +19,10 @@ const renderingUrl = (encodedTransientInstruction, encodedScene) => {
 
 const bottleScene = {
   front: encodeURIComponent(
-    'https://scene.yinshida.com.cn/v1/scenes/901a291f-eb9f-4f18-aca3-08ee276b2566'
+    "https://scene.yinshida.com.cn/v1/scenes/901a291f-eb9f-4f18-aca3-08ee276b2566"
   ),
   back: encodeURIComponent(
-    'https://scene.yinshida.com.cn/v1/scenes/4df95c51-9369-4f2b-9c1f-4b605f8e6c84'
+    "https://scene.yinshida.com.cn/v1/scenes/4df95c51-9369-4f2b-9c1f-4b605f8e6c84"
   ),
 };
 
@@ -35,9 +36,10 @@ exports.getDesign = (context) => {
   // }
   return new Promise((resolve, reject) => {
     const fetchDesign = JSON.stringify(designTemplate(data.params));
+    // fetchDesign.document.surfaces[0];
     zlib.deflateRaw(fetchDesign, (err, buffer) => {
       if (!err) {
-        const getBtoa = encodeURIComponent(buffer.toString('base64'));
+        const getBtoa = encodeURIComponent(buffer.toString("base64"));
         const documentUrl = formDocument(getBtoa);
         const getRenderingUrl = renderingUrl(
           documentUrl,
@@ -52,14 +54,13 @@ exports.getDesign = (context) => {
 };
 
 exports.getToken = async (context) => {
-  // console.log(process.env);
   try {
     const result = await context.cloud.httpApi.invoke({
       domain: process.env.MTdomain,
-      path: '/api/authentication/token',
-      method: 'POST',
+      path: "/api/authentication/token",
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        "Content-Type": "application/json;charset=UTF-8",
       },
       body: {
         clientId: process.env.ClientId,
@@ -84,9 +85,9 @@ exports.getDetail = async (context) => {
     const result = await context.cloud.httpApi.invoke({
       domain: process.env.MTdomain,
       path: `/api/goods/sku/tmall/${context.data.id}`,
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        "Content-Type": "application/json;charset=UTF-8",
         Authorization: context.data.token,
       },
     });
@@ -107,13 +108,13 @@ exports.getImage = async (context) => {
   try {
     const result = await context.cloud.httpApi.invoke({
       domain: process.env.MTdomain,
-      path: '/api/upload/mainland',
-      method: 'POST',
+      path: "/api/upload/mainland",
+      method: "POST",
       params: {
         uri: context.data.uri,
       },
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        "Content-Type": "application/json;charset=UTF-8",
         Authorization: context.data.token,
       },
     });
@@ -135,10 +136,10 @@ exports.saveDesign = async (context) => {
     // const data = context.data;
     const result = await context.cloud.httpApi.invoke({
       domain: process.env.MTdomain,
-      path: '/api/design/savedesign',
-      method: 'POST',
+      path: "/api/design/savedesign",
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        "Content-Type": "application/json;charset=UTF-8",
         Authorization: context.data.token,
       },
       body: context.data.body,
@@ -160,13 +161,13 @@ exports.getDesKey = async (context) => {
   try {
     const result = await context.cloud.httpApi.invoke({
       domain: process.env.MTdomain,
-      path: '/api/design/saveuserdesign',
-      method: 'POST',
+      path: "/api/design/saveuserdesign",
+      method: "POST",
       params: {
         designKey: context.data.designKey,
       },
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        "Content-Type": "application/json;charset=UTF-8",
         Authorization: context.data.token,
       },
     });
@@ -183,16 +184,23 @@ exports.getDesKey = async (context) => {
   }
 };
 
+exports.getSensitiveWords = async () => {
+  return {
+    success: true,
+    result: { data: SW },
+  };
+};
+
 exports.designPreview = async (context) => {
   try {
     const data = context.data;
     const result = await context.cloud.httpApi.invoke({
       domain: process.env.MTdomain,
       path: `/api/tmall/preview/${context.data.id}`,
-      method: 'GET',
+      method: "GET",
       params: data.params,
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        "Content-Type": "application/json;charset=UTF-8",
         Authorization: context.data.token,
       },
     });
@@ -208,4 +216,11 @@ exports.designPreview = async (context) => {
       result: e,
     };
   }
+};
+
+exports.getDomain = async () => {
+  return {
+    success: true,
+    result: { data: process.env.MTdomain },
+  };
 };

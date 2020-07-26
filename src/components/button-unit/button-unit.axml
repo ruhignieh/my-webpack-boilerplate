@@ -1,0 +1,5 @@
+<view class="buttonUnit">
+  <view class="btn shadow {{data.disabled ? 'disabled' : ''}} {{data.size}}" onTap="onhandle">
+    <text>{{data.text}}</text>
+  </view>
+</view>

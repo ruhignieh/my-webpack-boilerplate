@@ -1,12 +1,7 @@
-page {
-  background: red;
-  .x {
-    background: blue;
-  }
-  .mx {
+.page-demo {
+    background-image: url(../../assets/image/logo.png);
     overflow: hidden;
-  }
-  .vv {
-    overflow-wrap: break-word;
-  }
+    view {
+        background-color: red;
+    }
 }

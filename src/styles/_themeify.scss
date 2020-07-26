@@ -1,0 +1,56 @@
+@import './_themes.scss';
+
+/* 
+  使用demo 
+  .app-home {
+    font-size: 18px;
+    @include themeify {
+      color: themed('font-color');
+    }
+  }
+ */
+
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    $theme-map: $theme-map !global;
+    .pageMoet.#{$theme-name} & {
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin mytheme {
+  @include themify() {
+    color: themed('font-color');
+    font-size: themed('font-size');
+    .test-theme {
+      background: themed('background');
+    }
+  }
+}
+
+@mixin themify() {
+  @each $theme-name, $map in $themes {
+    // & 表示父级元素
+    // !global 表示覆盖原来的
+    .pageContainer.#{$theme-name} & {
+      $theme-map: () !global;
+      // 循环合并键值对
+      @each $key, $value in $map {
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      // 表示包含 下面函数 themed()
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<view class="borad">
+  <view class="title">{{title}}</view>
+  <scroll-view class="boradContainer" scroll-y="true">
+    <view>{{tips}}<text class="bold">{{importantTips}}</text></view>
+    <view class="text" a:for="{{textList}}" style="{{item.style}}">{{item.text}}</view>
+  </scroll-view>
+  <view class="check" onTap="change">
+    <view class="checkbox"><view a:if="{{checked}}" class="checked"></view></view>
+    <text class="checkbox-text">{{checkTips}}</text>
+  </view>
+</view>
