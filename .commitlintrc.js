@@ -6,7 +6,7 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-06-03 16:03:52
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-06-05 15:36:24
+ * @LastEditTime: 2020-07-26 16:32:52
  */ 
 module.exports = {
   extends: ['@commitlint/config-conventional'],

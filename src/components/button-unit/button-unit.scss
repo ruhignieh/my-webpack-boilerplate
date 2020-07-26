@@ -1,0 +1,27 @@
+@import 'functions';
+@import 'themeify';
+
+.buttonUnit {
+  .btn {
+    text-align: center;
+    width: pxToRpx(133);
+    height: pxToRpx(33);
+    line-height: 34px;
+    // background: rgba(246, 222, 222, 1);
+    @include themeify {
+        background: themed('button-bg');
+    }
+    border-radius: 15px;
+    color: rgba(0, 0, 0, 1);
+    font-size: 16px;
+    &.disabled text {
+      opacity: 0.2;
+    }
+  }
+  .small {
+    width: 84px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 12px;
+  }
+}

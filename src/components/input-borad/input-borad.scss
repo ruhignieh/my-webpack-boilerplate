@@ -1,0 +1,85 @@
+@import 'functions';
+
+.inputBorad{
+    position: relative
+}
+.inputBorad .textChooseArea{
+    position: absolute;
+    z-index: 99;
+    top: -140px;
+    width: 100%;
+    height: 157px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+.inputBorad .closedBorder{
+    position: absolute;
+    z-index: 9;
+    top: 7px;
+    right: 7px;
+    padding: 5px;
+}
+.inputBorad .closed{
+    width: 10px;
+    height: 10px;
+    background-image: url(../../assets/image/closed.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.inputBorad .arrow{
+    position: absolute;
+    right: 32px;
+    bottom: -10px;
+    border-left: 6px solid transparent;  
+    border-right: 6px solid transparent;  
+    border-top: 10px solid #fff;  
+    width: 0px;
+    height: 0px;
+}
+.inputBorad .textLine{
+    color:rgba(0,0,0,1);
+    opacity:0.3;
+    margin:10px 12px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 2px solid rgb(246, 222, 222);
+}
+.inputBorad .inputArea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inputBorad .inputView{
+    height: 34px;
+    margin:0 9px 0 0;
+    flex-grow: 1;
+    border-radius: 15px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+}
+.inputBorad input{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+.inputBorad .errIcon{
+    width: 27px;
+    height: 22px;
+    background-image: url(../../assets/image/error.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.inputBorad .title{
+    text-align: center;
+    padding-bottom: 12px;
+    font-size: 16px;
+}
+.inputBorad .tips{
+    padding-top: 10px;
+    font-size: pxToRpx(13);;
+}

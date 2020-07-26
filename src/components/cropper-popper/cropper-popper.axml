@@ -1,0 +1,17 @@
+<view class="component-cropper-popper" a:if="{{show}}">
+  <view class="container">
+    <view class="head">
+      <view class="left">裁剪</view>
+      <view class="right" onTap="onClose">
+        <image mode="widthFix" src="/pages/index/asset/image/closed.png"/>
+      </view>
+    </view>
+    <view class="cropper-area">
+      <moet-cropper cutRadio="{{cropperRadio}}" image="{{image}}" onComplete="handleComplete"></moet-cropper>
+    </view>
+    <view class="button-area">
+      <moet-button data={{cancelBtn}} onFn="onCancel"></moet-button>
+      <moet-button data={{confirmBtn}} onFn="onConfirm"></moet-button>
+    </view>
+  </view>
+</view>

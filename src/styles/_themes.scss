@@ -1,0 +1,7 @@
+@import './_default.scss';
+@import './_gold.scss';
+
+$themes: (
+  default: $theme-default,
+  gold: $theme-gold,
+);

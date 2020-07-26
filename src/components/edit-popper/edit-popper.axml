@@ -1,0 +1,24 @@
+<view class="component-edit-popper" a:if="{{show}}">
+  <view class="container">
+    <view class="head">
+      <view class="left">编辑照片</view>
+      <view class="right" onTap="handleClose">
+        <image mode="widthFix" src="../../assets/image/closed.png"/>
+      </view>
+    </view>
+    <view class="button-area">
+      <view class="btn">
+        <view class="circle back" onTap="handleBack"></view>
+        <view class="text">返回</view>
+      </view>
+      <view class="btn">
+        <view class="circle cropper" onTap="handleCropper"></view>
+        <view class="text">裁剪</view>
+      </view>
+      <view class="btn">
+        <view class="circle del" onTap="handleDel"></view>
+        <view class="text">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

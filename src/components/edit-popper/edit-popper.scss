@@ -1,0 +1,69 @@
+.component-edit-popper {
+    position: fixed;
+    bottom: 115.84rpx;
+    width: 680.56rpx;
+    height: 242.54rpx;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgba(246, 222, 222, 1);
+    box-shadow: 3px 1px 6px rgba(253, 122, 122, 0.4);
+    z-index: 1;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.component-edit-popper .container {
+    position: relative;
+    width: 654.45rpx;
+    padding: 18rpx 25.34rpx 39.82rpx 10.86rpx;
+    box-sizing: content-box;
+}
+
+.component-edit-popper .head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 36.2rpx;
+    font-size: 30.77rpx;
+}
+
+.component-edit-popper .head .right image {
+    width: 100%;
+}
+
+.component-edit-popper .button-area {
+    display: flex;
+    justify-content: center;
+}
+
+.component-edit-popper .button-area .btn {
+    text-align: center;
+    width: 161.09rpx;
+}
+
+.component-edit-popper .button-area .btn .circle {
+    width: 72.4rpx;
+    height: 72.4rpx;
+    margin: 0 auto 18.1rpx;
+    border-radius: 50%;
+    box-shadow: 0px 3px 6px rgba(253, 122, 122, 0.4);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center center;
+}
+
+.component-edit-popper .button-area .btn .circle.back {
+    background-image: url(../../assets/image/back.png);
+}
+
+.component-edit-popper .button-area .btn .circle.cropper {
+    background-image: url(../../assets/image/cropper.png);
+}
+
+.component-edit-popper .button-area .btn .circle.del {
+    background-image: url(../../assets/image/del.png);
+}
+
+.component-edit-popper .button-area .btn .text {
+    font-size: 22rpx;
+}

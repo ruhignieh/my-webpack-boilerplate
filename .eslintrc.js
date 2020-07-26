@@ -13,9 +13,13 @@ module.exports = {
         getApp: false,
         Page: false,
         my: false,
+        wx: false,
         App: false,
         getCurrentPages: false,
         Component: false,
+        __DEV__: 'readonly',
+        __WECHAT__: 'readonly',
+        __ALIPAY__: 'readonly'
     },
     parser: 'babel-eslint',
     parserOptions: {
@@ -75,7 +79,7 @@ module.exports = {
         'comma-spacing': [2, { before: false, after: true }],
         curly: 2,
         eqeqeq: [2, 'always', { null: 'ignore' }],
-        'new-cap': [2, { capIsNewExceptions: ['Deferred'] }],
+        'new-cap': [2, { capIsNewExceptions: ['Deferred', 'Component', 'Page', 'App'] }],
         'no-use-before-define': 2,
         'guard-for-in': 0,
         indent: [2, 4, { SwitchCase: 1 }],

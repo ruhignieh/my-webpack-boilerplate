@@ -1,0 +1,33 @@
+<view class="uploadContainer" style="{{...styles}}" hidden="{{!show}}">
+  <view class="filesContent shadow">
+    <view class="closedBorder bold" onTap="closed">
+      <view class="closed"></view>
+    </view>
+    <view class="title bold">{{imageList.length > 0 ? title : titleOpen}}</view>
+    <view class="imageContent">
+      <view class="squar" a:for="{{imageList}}" a:key="{{item.id}}">
+        <view class="del" data-item="{{item}}" onTap="del">
+          <view class="closed"></view>
+        </view>
+        <view class="photo">
+          <view class="image" style="background-image:url({{item.src && item.origin}})"></view>
+        </view>
+        <view class="imageMask {{activeImageId == item.id ? 'activeImage': ''}}" onTap="onClickImage" data-value="{{item}}">
+        </view>
+        <view class="imageLoading" a:if="{{!item.src}}">
+          <view class="imageLoadingCover">
+            <image mode="widthFix" src="../../assets/image/circle.png"/>
+            <view>上传中</view>
+          </view>
+        </view>
+      </view>
+      <view class="squar" a:if="{{imageList.length < 5}}">
+        <view class="add bold" onTap="onUpload">
+          <view class="addIcon">+</view>
+          <view class="addTitle" a:if="{{imageList.length >0}}">{{iconTitle}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="tips">{{tips}}</view>
+  </view>
+</view>

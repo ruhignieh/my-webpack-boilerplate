@@ -1,0 +1,37 @@
+<view class="inputBorad">
+  <view class="textChooseArea shadow" a:if="{{show}}">
+    <view class="closedBorder bold" onTap="closed" >
+      <view class="closed"></view>
+    </view>
+    <view class="textLine" a:for="{{tipList}}" data-text="{{item}}" catchTap="chooseText">{{item}}</view>
+    <view class="arrow"></view>
+  </view>
+  <view class="bold title">{{title}}</view>
+  <view class="inputArea">
+    <view class="inputView shadow">
+      <input placeholder="TEXT HERE" enableNative="{{activeFocus}}" controlled value="{{value}}" onInput="bindKeyInput" onFocus="onFocus" onBlur="onBlur" />
+      <view class="errIcon" hidden="{{!textErr && value.length <= max && typeSuccess || value.length===0}}"></view>
+    </view>
+    <view class="bold" a:if="{{showTipList}}">
+      <button-unit data={{btn}} onFn="handleClick"/>
+    </view>
+  </view>
+  <block a:if="{{textErr}}">
+      <view class="bold tips">{{errTips}}</view>
+  </block>
+  <block a:else>
+      <view class="bold tips">{{tips}}</view>
+  </block>
+  <!-- <block a:if="{{!textLenErr && !textErr}}">
+    <view class="bold tips">{{tips}}</view>
+  </block>
+  <block a:if="{{textLenErr && !textErr && value.length <= max}}">
+    <view class="bold tips">{{tips}}</view>
+  </block>
+  <block a:if="{{textLenErr && !textErr && value.length > max}}">
+    <view class="bold tips">{{errLenTips}}</view>
+  </block>
+  <block a:if="{{textErr}}">
+    <view class="bold tips">{{errTips}}</view>
+  </block> -->
+</view>

@@ -1,3 +1,8 @@
-<view class="main">
-  <button type="primary" onTap="navigateToMK">跳转新页面</button>
+<view class="page-demo">
+    <view>Let Starts</view>
+    <view>{{title}}</view>
+    <!-- <image src="./logo.png" /> -->
+    <!-- <image src="../../assets/image/logo.png" /> -->
+    <!-- <image src="{{image}}" /> -->
+    <image src="../../assets/image/logo.png" />
 </view>
