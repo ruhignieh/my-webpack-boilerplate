@@ -6,7 +6,7 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-07-24 10:53:41
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-07-26 16:44:22
+ * @LastEditTime: 2020-08-02 21:48:52
  */ 
 const path = require('path');
 const {
@@ -43,6 +43,35 @@ module.exports = {
                         },
                     }
                 ]
+            },
+            {
+                test: /\.pug$/,
+                include: /src/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: `[path][name].${isWechat ? 'wxml' : 'axml'}`,
+                            context: srcDir,
+                        },
+                    },
+                    {
+                        loader: 'wxml-loader',
+                        options: {
+                            root: srcDir,
+                            enforceRelativePath: false
+                        },
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                        options: {
+                            pretty: false,
+                            data: {
+                                name: 'Ruhig Nieh'
+                            }
+                        }
+                    }
+                ]
             }
         ],
     },
@@ -62,7 +91,7 @@ module.exports = {
             clear: true,
         }),
         new MinifyPlugin(),
-        false && new WebpackAliOSS({ // 配置oss 地址
+        false && new WebpackAliOSS({
             auth: {
                 accessKeyId: '', // 在阿里 OSS 控制台获取
                 accessKeySecret: '', // 在阿里 OSS 控制台获取
@@ -71,7 +100,7 @@ module.exports = {
             },
             enableLog: false,
             ossBaseDir: 'img', //OSS 中存放上传文件的一级目录名 
-            project: 'moet/mina-app', // 项目名(用于存放文件的直接目录) OSS 中存放上传文件的二级目录, 一般为项目名
+            project: 'name', // 项目名(用于存放文件的直接目录) OSS 中存放上传文件的二级目录, 一般为项目名
             include: /.*\.(png|jpg|gif)$/,
         }),
     ].filter(Boolean)

@@ -6,11 +6,12 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-06-04 14:15:07
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-06-04 14:23:20
+ * @LastEditTime: 2020-07-29 18:21:45
  */ 
+import './<%= basename %>.scss';
   
 Component({
-	properties: {
-		title: '<%= basename %> Component'
-	}
+    properties: {
+        title: '<%= basename %> Component'
+    }
 });

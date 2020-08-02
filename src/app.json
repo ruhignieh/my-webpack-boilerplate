@@ -1,12 +1,14 @@
 {
-  "pages": [
-    "pages/index/index"
-  ],
-  "window": {
-    "defaultTitle": "Wine Bottle",
-    "navigationBarTextStyle": "black",
-    "titleBarColor": "#ffffff",
-    "navigationBarForceEnable": true,
-    "allowsBounceVertical": "NO"
-  }
+    "pages": [
+        "pages/index/index",
+        "pages/demo/demo",
+        "pages/demo1/demo1"
+    ],
+    "window": {
+        "defaultTitle": "Wine Bottle",
+        "navigationBarTextStyle": "black",
+        "titleBarColor": "#ffffff",
+        "navigationBarForceEnable": true,
+        "allowsBounceVertical": "NO"
+    }
 }

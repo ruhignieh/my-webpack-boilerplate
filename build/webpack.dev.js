@@ -6,7 +6,7 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-07-24 10:53:23
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-07-24 14:06:58
+ * @LastEditTime: 2020-07-29 17:58:32
  */ 
 const path = require('path');
 const {
@@ -41,6 +41,35 @@ module.exports = {
                     }
                 ]
             },
+            {
+                test: /\.pug$/,
+                include: /src/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: `[path][name].${isWechat ? 'wxml' : 'axml'}`,
+                            context: srcDir,
+                        },
+                    },
+                    {
+                        loader: 'wxml-loader',
+                        options: {
+                            root: srcDir,
+                            enforceRelativePath: false
+                        },
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                        options: {
+                            pretty: true,
+                            data: {
+                                name: 'PUG Template'
+                            }
+                        }
+                    }
+                ]
+            }
         ],
     },
     plugins: [

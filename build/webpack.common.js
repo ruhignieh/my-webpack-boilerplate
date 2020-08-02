@@ -6,7 +6,7 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-07-24 10:53:09
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-07-24 16:26:45
+ * @LastEditTime: 2020-07-29 15:35:20
  */ 
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -123,11 +123,11 @@ module.exports = {
                         options: {
                             root: srcDir,
                             enforceRelativePath: false
-                        },
+                        }
                     }
-                ],
-            },
-        ],
+                ]
+            }
+        ]
     },
     plugins: [
         new GenerateAssetPlugin({

@@ -1,8 +1,5 @@
 <view class="page-demo">
     <view>Let Starts</view>
     <view>{{title}}</view>
-    <!-- <image src="./logo.png" /> -->
-    <!-- <image src="../../assets/image/logo.png" /> -->
-    <!-- <image src="{{image}}" /> -->
     <image src="../../assets/image/logo.png" />
 </view>

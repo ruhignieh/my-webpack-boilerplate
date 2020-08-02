@@ -6,14 +6,16 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-06-04 14:29:08
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-06-04 14:29:47
+ * @LastEditTime: 2020-07-29 18:21:33
  */ 
-Page({
-	data: {
-		title: '<%= basename %>',
-	},
+import './<%= basename %>.scss';
 
-	onLoad(params) {
-		console.log(params);
-	},
+Page({
+    data: {
+        title: '<%= basename %>',
+    },
+
+    onLoad(params) {
+        console.log(params);
+    },
 });

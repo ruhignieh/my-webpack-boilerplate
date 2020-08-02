@@ -6,24 +6,21 @@
  * @Author: Ruhig Nieh
  * @Date: 2020-07-13 10:39:14
  * @LastEditors: Ruhig Nieh
- * @LastEditTime: 2020-07-24 14:18:42
+ * @LastEditTime: 2020-07-29 18:19:37
  */
 import './index.scss';
-// import image from '../../assets/image/logo.png';
-// console.log(image);
-// console.log(require);
+
 Page({
     events: {
         onKeyboardHeight() {},
     },
     data() {
         return {
-            // image,
-            title: 'Demo',
+            title: 'Demo!',
         };
     },
     onLoad() {
-        console.log('__ALIPAY__:', __ALIPAY__);
+    // console.log('__ALIPAY__:', __ALIPAY__);
     },
 
     onHide() {},
